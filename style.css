@@ -1,0 +1,51 @@
+/* Styles for the new input field and buttons */
+.input-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between input and button */
+    margin-top: 15px;
+}
+
+#color-input {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    width: 220px;
+    text-align: center;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Make the 'Copy' button green for clarity */
+#copy-btn {
+    background-color: #28a745; /* A nice green */
+}
+
+#copy-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+#copy-message {
+    color: #28a745;
+    font-weight: 500;
+    margin-top: 10px;
+    opacity: 0; /* Initially invisible */
+    transition: opacity 0.5s ease;
+}
+
+/* Helper class to make the message visible */
+#copy-message.visible {
+    opacity: 1;
+}
+
+/* Helper class to hide it initially */
+#copy-message.hidden {
+    display: none;
+}
