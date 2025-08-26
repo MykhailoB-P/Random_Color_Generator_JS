@@ -1,3 +1,101 @@
+/* Import a nice font from Google Fonts (optional, but looks good) */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap');
+
+body {
+    font-family: 'Quicksand', sans-serif; /* Use the imported font */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+    height: 100vh;          /* Make it full-screen height */
+    margin: 0;              /* Remove default browser margins */
+    background-color: #F5F5DC; /* Starting background color: Beige */
+    transition: background-color 0.7s ease; /* Make color change smooth */
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white card */
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+h1 {
+    color: #333;
+    font-weight: 500;
+}
+
+button {
+    /* Общие стили для всех кнопок */
+    appearance: none;
+    outline: none;
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 12px 24px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden; /* Скрывает всё, что выходит за пределы кнопки */
+    z-index: 1;
+    color: white; /* Цвет текста кнопки */
+}
+
+/* Make the button slightly darker when the mouse is over it */
+button:hover {
+    background-color: #76BEDA;
+}
+
+/* Стили для свечения */
+.glow-button {
+    background: #87CEEB; /* A nice Sky Blue */
+    transition: background-color 0.9s ease;
+}
+
+/* Псевдо-элемент для создания эффекта свечения */
+.glow-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 0deg,
+        #76BEDA 0deg,
+        #87CEEB 90deg,
+        #76BEDA 180deg,
+        #87CEEB 270deg,
+        #76BEDA 360deg
+    );
+    animation: glow-pulse 4s linear infinite; /* Запускаем анимацию */
+    z-index: -1; /* Отправляем свечение под текст кнопки */
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Эффект при наведении */
+.glow-button:hover {
+    background-color: #76BEDA;
+}
+
+.glow-button:hover::before {
+    opacity: 1;
+    transform: scale(1.1); /* Увеличиваем свечение */
+}
+
+/* Анимация вращения свечения */
+@keyframes glow-pulse {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 /* Styles for the new input field and buttons */
 .input-group {
     display: flex;
