@@ -19,7 +19,7 @@ A simple and stylish web application that generates random HEX colour codes. Thi
 
 ### How to Run:
 
-1.  Clone this repository: `git clone [your_repository_address]`
+1.  Clone this repository: `git clone https://github.com/MykhailoB-P/Random_Color_Generator_JS.git`
 2.  Open the `index.html` file in your web browser.
 
 ---
