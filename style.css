@@ -26,7 +26,7 @@ h1 {
 }
 
 button {
-    /* Общие стили для всех кнопок */
+    /* Styles for all buttons */
     appearance: none;
     outline: none;
     border: none;
@@ -37,9 +37,9 @@ button {
     padding: 12px 24px;
     cursor: pointer;
     position: relative;
-    overflow: hidden; /* Скрывает всё, что выходит за пределы кнопки */
+    overflow: hidden;
     z-index: 1;
-    color: white; /* Цвет текста кнопки */
+    color: white;
 }
 
 /* Make the button slightly darker when the mouse is over it */
@@ -47,13 +47,13 @@ button:hover {
     background-color: #76BEDA;
 }
 
-/* Стили для свечения */
+/* styles for glowing */
 .glow-button {
     background: #87CEEB; /* A nice Sky Blue */
     transition: background-color 0.9s ease;
 }
 
-/* Псевдо-элемент для создания эффекта свечения */
+/*  */
 .glow-button::before {
     content: '';
     position: absolute;
@@ -69,24 +69,23 @@ button:hover {
         #87CEEB 270deg,
         #76BEDA 360deg
     );
-    animation: glow-pulse 4s linear infinite; /* Запускаем анимацию */
-    z-index: -1; /* Отправляем свечение под текст кнопки */
+    animation: glow-pulse 4s linear infinite; /* start of animation */
+    z-index: -1; /* sending glowing under the button */
     opacity: 0;
     transform: scale(0.8);
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Эффект при наведении */
 .glow-button:hover {
     background-color: #76BEDA;
 }
 
 .glow-button:hover::before {
     opacity: 1;
-    transform: scale(1.1); /* Увеличиваем свечение */
+    transform: scale(1.1); /* Increasing glow effect */
 }
 
-/* Анимация вращения свечения */
+/* rotate animation for glowing */
 @keyframes glow-pulse {
     0% {
         transform: rotate(0deg);
