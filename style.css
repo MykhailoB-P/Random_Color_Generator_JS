@@ -146,3 +146,102 @@ button:hover {
 #copy-message.hidden {
     display: none;
 }
+
+.gradient-page-button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    background: linear-gradient(90deg, #FF6B6B, #53B9EA);
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gradient-page-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 0deg,
+        #FF6B6B 0deg,
+        #53B9EA 90deg,
+        #FF6B6B 180deg,
+        #53B9EA 270deg,
+        #FF6B6B 360deg
+    );
+    animation: gradient-rotate 4s linear infinite;
+    z-index: -1;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.gradient-page-button:hover::before {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+@keyframes gradient-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.back-button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    background-color: #f0ad4e;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #ec971f;
+}
+
+.back-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 0deg,
+        #f0ad4e 0deg,
+        #ec971f 90deg,
+        #f0ad4e 180deg,
+        #ec971f 270deg,
+        #f0ad4e 360deg
+    );
+    animation: glow-pulse 4s linear infinite;
+    z-index: -1;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.back-button:hover::before {
+    opacity: 1;
+    transform: scale(1.1);
+}
